@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Protocols</title>
-    <meta charset="utf-8" />
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
-  </head>
-  <style>
+    <head>
+        <title>Protocols</title>
+        <meta charset="utf-8"/>
+        <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    </head>
+    <style>
     @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
@@ -166,6 +166,9 @@
       float: right;
       padding-top: 1em;
     }
+    .right-column ul{
+        margin: 1em 0;
+    }
     
     @page {
       size: 1210px 681px;
@@ -226,192 +229,113 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# HTTP Protocol
----
-## What is it?
+# Halloween
 ---
 layout: false
 .left-column[
-  ## HTTP Protocol
-  ### What is it?
+  ## Halloween
+  ### .marked[Significado]
 ]
 .right-column[
-  Short for .strong[.marked[H]ypertext .marked[T]ransfer .m[P]rotocol.]
 
-  - A set of standards that allow users of www exchange information in web pages.
+  - "Halloween" significa (All hallow´s eve), del inglés antiguo, all hallows eve, o Víspera Santa
 
-  - It's the default communication method for browsers of all kind that require a web page.
+  
+  - Sin embargo, le ha robado su sentido religioso
+  
 
-  - It works through a .m[request] and a .m[response].
+  - Se ha olvidado el testimonio de los santos y la importancia de rezar por los muertos y se empezaron a realizar otras costumbres
 
 ]
 
 ---
 layout: false
 .left-column[
-  ## HTTP Protocol
-  ### What is it?
-  ### How it works?
+## Halloween
+### Significado
+### .marked[Orígenes]
 ]
 .right-column[
-  - All information travels in plain text with this protocol.
+  - La noche del 31 de Octubre marcaba el fin del verano y de las cosechas y daba llegada de los días de frío y oscuridad.
 
-  .m[request] example:
 
-  ```remark
-  GET / HTTP/1.1
-  Host: tec.mx
-  User-Agent: curl 9.0.0
-  ```
-  .m[response] of that:
+  - Creían que aquella noche el dios de la muerte permitía a los muertos volver a la tierra fomentando un ambiente de muerte y terror
 
-  ```remark
-  HTTP/1.1 301 Moved Permanently
-  Age: 82696
-  Cache-Control: max-age=1209600
-  Connection: keep-alive
-  Content-Length: 223
-  Content-Type: text/html; charset=iso-8859-1
-  Date: Tue, 13 Aug 2019 21:07:52 GMT
-  Expires: Tue, 27 Aug 2019 21:07:52 GMT
-  Location: https://tec.mx/
-  Server: nginx
-  Via: varnish
-  X-Cache: HIT
-  X-Cache-Hits: 5979
-  X-Content-Type-Options: nosniff
-  X-Request-ID: v-69864a40-be0e-11e9-b655-779e5e7a86c8
+  - Se creia que las almas de algunos difuntos estaban atrapadas dentro de animales feroces y que podían ser liberadas ofreciéndole a los
+dioses sacrificios
 
-  <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-  ... more html
-  </html>
-  ```
 
 ]
----
-.left-column[
-  ## HTTP Protocol
-  ### What is it?
-  ### How it works?
-  ### Request
-]
-.right-column[
-### Request
-```remark
-GET / HTTP/1.1
-Host: tec.mx
-User-Agent: curl 9.0.0
-```
 
-#### Firs line contains three different things
-  - .pre[GET] refers to HTTP method
-  - .pre[/] is the path requested
-  - .pre[HTTP/1.1] Protoco version, 1.1 in this case.
-
-#### All remaining lines are headers
-  - .pre[Host:] url we want to browse
-  - .pre[User-Agent:] Where we're requesting from.
-]
-
----
-.left-column[
-  ## HTTP Protocol
-  ### What is it?
-  ### How it works?
-  ### Request
-  ### Response
-]
-.right-column[
-### Response
-```remark
-HTTP/1.1 301 Moved Permanently
-
-Content-Length: 223
-//... more headers
-Content-Type: text/html; charset=iso-8859-1
-Date: Tue, 13 Aug 2019 21:07:52 GMT
-Expires: Tue, 27 Aug 2019 21:07:52 GMT
-Location: https://tec.mx/
-Server: nginx
-
-
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-... more html
-</html>
-```
-#### First line contains 3 things
-- .pre[HTTP/1.1] Protocol version 1.1 in this case.
-- .pre[301] Status code.
-- .pre[Moved Permanently] Human readable message.
-
-#### Next comes response headers.
-
-]
----
-.left-column[
-  ## HTTP Protocol
-  ### What is it?
-  ### How it works?
-  ### Request
-  ### Response
-]
-.right-column[
-### Response - II
-#### Next comes response headers.
-```remark
-Content-Type: text/html; charset=iso-8859-1
-Date: Tue, 13 Aug 2019 21:07:52 GMT
-Expires: Tue, 27 Aug 2019 21:07:52 GMT
-Location: https://tec.mx/
-Server: nginx
-```
-
-#### Finally we have renderable code, that's what we know!
-```remark
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html>
-<head><title>301 Moved Permanently</title></head>
-<body>
-  <h1>Moved Permanently</h1>
-  <p>The document has moved <a href="https://tec.mx/">here</a>.</p>
-</body>
-</html>
-```
-any web browser know how to render this
-]
----
-name: inverted
-layout: true
-class: center, middle
----
-## Hands on!
----
-name: inverted
-layout: true
-class: center
----
-## Homework
-<br/><br/>
-#### 1. In your own words, descirbe how .m[HTTP methods] work.
-#### 2. Describe what are the main .m[HTTP statuses] and how can we interpret them.
----
-name: inverse
-layout: true
-class: center, middle, inverse
----
-## Questions?
 ---
 layout: false
 .left-column[
-  ## CSS
-  ### What is it?
-  ### Box model
+## Halloween
+### Significado
+### Orígenes
+### .marked[Mezcla con el Cristianismo]
 ]
 .right-column[
-  ### Box model
-  <img src="assets/box-model-std.png" height="450">
+
+Cuando los pueblos se cristianizaron, no todos renunciaron a sus costumbres
+  
+La coincidencia cronológica de sus fiestas con la fiesta cristiana de Todos los Santos y la de los difuntos, hizo que algunos las mezclaran. 
+
+En vez de orar por los
+antepasados, se llenaban de miedo ante las antiguas supersticiones sobre la muerte y los difuntos.
+
+
 ]
 
+---
+layout: false
+.left-column[
+## Halloween
+### Significado
+### Orígenes
+### Mezcla con el Cristianismo
+### .marked[Costumbres]
+]
+.right-column[
+
+Trick or Treat
+
+```remark
+Los niños se disfrazan y van de casa en casa exigiendo 
+trick or treat (tambien conocido dulce o truco)
+
+La idea es resibir dulces y no realizar alguna 
+maldad a la casa que se visita
+
+
+```
+
+Calabaza
+
+```remark
+Según una antigua leyenda irlandesa un hombre llamado 
+Jack había sido muy malo y no podía entrar en el cielo
+pero tampoco podia ir al infierno y tuvo por eso que 
+permanecer en la tierra vagando con una linterna
+
+Para ahuyentar a Jack la gente colocaba una linterna 
+en la ventana o frente a la casa
+
+Estas linternas se hacian vaciando un vegetal y poniéndole 
+dentro  un carbón
+
+```
+
+Disfraces
+```remark
+Detrás de un disfraz se pueden hacer muchas cosas 
+con impunidad.
+
+Con frecuencia los disfraces se burlan de las cosas sagradas
+```
+
+
+]
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -420,4 +344,7 @@ layout: false
     </script>
   </body>
 </html>
-
+ 
+</html> 
+</html>
+</html>
